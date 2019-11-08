@@ -1,0 +1,15 @@
+button{
+    float: right;
+}
+
+#headerBar{
+    height: 50px;
+    width: 100%;
+    background: rgb(37, 37, 107);
+}
+
+.form-group{
+margin-left: 50px;
+margin-right: 50px;
+
+}
