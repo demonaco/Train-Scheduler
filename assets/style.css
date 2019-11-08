@@ -1,3 +1,19 @@
+p{
+font-family: 'Playfair Display', serif;
+}
+
+h1{
+ font-family: 'Playfair Display', serif;
+ }
+
+ label{
+        font-family: 'Playfair Display', serif;
+ }
+
+ .form-control{
+    font-family: 'Playfair Display', serif;
+ }
+
 button{
     float: right;
 }
@@ -16,7 +32,27 @@ margin-right: 50px;
 
 #trainContainer{
     width: 100%;
-    heigth: 56px;
-    background: black;
-    color: white;
+    height: 250px;
+    background: white;
+    color: black;
+    border: solid, black;
+}
+
+#bottom{
+    border: solid rgb(37, 37, 107);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#top{
+    border: solid rgb(37, 37, 107);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#divExplainer{
+   color: white;
+    margin: auto 0;
+    padding-top: 10px;
+    margin-left: 10px;
 }
