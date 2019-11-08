@@ -14,6 +14,14 @@ h1{
     font-family: 'Playfair Display', serif;
  }
 
+ .jumbotron{
+    font-family: 'Playfair Display', serif; 
+    background: rgb(37, 37, 107);
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+ }
+
 button{
     float: right;
 }
