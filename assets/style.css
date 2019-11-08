@@ -13,3 +13,10 @@ margin-left: 50px;
 margin-right: 50px;
 
 }
+
+#trainContainer{
+    width: 100%;
+    heigth: 56px;
+    background: black;
+    color: white;
+}
