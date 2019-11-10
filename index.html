@@ -25,13 +25,23 @@
             </div>
         </div>
     </div>
+    
 
     <div id="top">
             <div id="headerBar"><p id="divExplainer">Current Train Schedule</p></div>
-        <div id="trainContainer">
-            <div id="train1">
-                <div><p>Train name</p><p>Destination</p><p>Frequency (mins)</p><p>Next Arrival</p><p>Minutes Away</p></div>
-                    <p id="p1"></p>
+        <!-- <div id="trainContainer">
+            <nav><tr><th class="col col-sm-3"><p id="column1">Train name</p></th><th class="col col-sm-3"><p id="column2"><Destination</p></th><th class="col col-sm-3"><p id="column3">Frequency (mins)</p></th><th class="col col-sm-3"><p id="column4">Next Arrival</p></th><th class="col col-sm-3"><p id="column5">Minutes Away</p></th></th><hr></tr></nav> -->
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><p id="trainName">Train Name</p><p id="destination">Destination</p><p id="frequency">Frequency (min)</p><p id="arrival">Next Arrival</p><p id="minAway">Minutes Away</p></li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>    
+            
+            
+            <!-- <div id="train1">
+                <p id="p1"></p>
                 </div>
                 <div id="train2">
                     <p></p>
@@ -56,8 +66,8 @@
                 </div>
                 <div id="train9">
                     <p></p>
-                </div>
-            </div>
+                </div> -->
+            </div> 
     </div>
 <br>
 <div id="bottom">
@@ -83,8 +93,9 @@
             </div>
         </form>
     </div>
-
-
+<br>
+<br>
+<footer></footer>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -94,15 +105,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.3.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.3.0/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     </body>
 
 </html>

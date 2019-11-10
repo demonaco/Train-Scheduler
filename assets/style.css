@@ -1,5 +1,10 @@
 p{
 font-family: 'Playfair Display', serif;
+float: left;
+}
+
+th{
+    padding-right: 50px;
 }
 
 h1{
@@ -63,4 +68,49 @@ margin-right: 50px;
     margin: auto 0;
     padding-top: 10px;
     margin-left: 10px;
+}
+
+#column1{
+
+}
+
+#column2{
+   float: right;
+    margin-left: 100px;
+}
+
+#column3{
+    margin-right: 50px;
+}
+
+#column4{
+    margin-right: 50px;
+}
+
+#column5{
+    margin-right: 50px;
+}
+
+#trainName{
+    margin-right: 95px;
+}
+
+#destination{
+margin-right: 95px;
+}
+
+#frequency{
+    margin-right: 95px;
+}
+
+#arrival{
+    margin-right:95px;
+}
+
+#minAway{
+    margin-right: 95px;
+}
+
+form{
+    height: 410px;
 }
