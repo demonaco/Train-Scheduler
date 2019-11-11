@@ -5,8 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--moment.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script> –
+  <!-- Firebase Core JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <!-- Specific Firebase products we want (Database) -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script type=text/javascript src="moment.js"></script>
     <script type=text/javascript src="app.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,14 +41,41 @@
             <div id="headerBar"><p id="divExplainer">Current Train Schedule</p></div>
         <!-- <div id="trainContainer">
             <nav><tr><th class="col col-sm-3"><p id="column1">Train name</p></th><th class="col col-sm-3"><p id="column2"><Destination</p></th><th class="col col-sm-3"><p id="column3">Frequency (mins)</p></th><th class="col col-sm-3"><p id="column4">Next Arrival</p></th><th class="col col-sm-3"><p id="column5">Minutes Away</p></th></th><hr></tr></nav> -->
-            <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><p id="trainName">Train Name</p><p id="destination">Destination</p><p id="frequency">Frequency (min)</p><p id="arrival">Next Arrival</p><p id="minAway">Minutes Away</p></li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>    
-            
+            <table class="table table-sm table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Milano Express</th>
+                        <td>Milan</td>
+                        <td>15</td>
+                        <td>Soon!</td>
+                        <td>12 minutes</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Paris Rails</th>
+                        <td>Paris</td>
+                        <td>45</td>
+                        <td>soon!</td>
+                        <td>15 minutes</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">German Railways</th>
+                        <td>Frankfurt</td>
+                        <td>60</td>
+                        <td>Soon!</td>
+                        <td>10 minutes</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
             
             <!-- <div id="train1">
                 <p id="p1"></p>
@@ -75,19 +112,19 @@
         <form>
         <div class="form-group">
             <label for="formGroupExampleInput">Train Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Train Name">
+                <input type="text" class="form-control" id="trainInput" placeholder="Train Name">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Destination</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Destination">
+                <input type="text" class="form-control" id="destinationInput" placeholder="Destination">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">First Train HH:MM - Military Time</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="First Train">
+                <input type="text" class="form-control" id="firstTrain" placeholder="First Train">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Frequency (min)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Frequency">
+                <input type="text" class="form-control" id="frequencyInput" placeholder="Frequency">
                 <br>
                 <button type="submit" class="btn btn-primary my-1">Submit</button>
             </div>
@@ -98,6 +135,7 @@
 <footer></footer>
 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -105,9 +143,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-  <!-- Firebase References -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
     </body>
 
 </html>
